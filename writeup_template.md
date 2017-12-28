@@ -55,8 +55,8 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the number of examples in each class in each dataset (train,validation,test)
 
+![image1](label-counts.png)
 
-[image1]: label-counts.png "Label Counts"
 This shows a visual representation of the label counts from each data set.  Here we can see that each set has the same proportion of labels and that the speed signs (sub 15 labels) make a majority of the labels.
 
 ### Design and Test a Model Architecture
@@ -139,15 +139,26 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web
 
-[image4]: newTestImages/11.jpg "right-of-way"
-[image5]: newTestImages/12.jpg "priority road" 
-[image6]: newTestImages/17.jpg "no entry" 
-[image7]: newTestImages/25.jpg "road work" 
-[image8]: newTestImages/4.jpg "70 km/h limit" 
-<!-- ![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
- -->
-The first image might be difficult to classify because ...
+"right-of-way"
+
+![image4](newTestImages/11.jpg) 
+
+"priority road" 
+
+![image5](newTestImages/12.jpg)
+
+"no entry" 
+
+![image6](newTestImages/17.jpg) 
+
+"road work" 
+
+![image7](newTestImages/25.jpg)
+
+"70 km/h limit"  
+
+![image8](newTestImages/4.jpg)
+
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 I downloaded images from the inernet, and then used some free website to resize it rather than python since there was only 5 images.  
