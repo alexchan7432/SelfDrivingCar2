@@ -137,7 +137,7 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are five German traffic signs that I found on the web
 [image4]: ./newTestImages/11.jpg "right-of-way"
 [image5]: ./newTestImages/12.jpg "priority road" 
 [image6]: ./newTestImages/17.jpg "no entry" 
@@ -169,9 +169,9 @@ Here are the results of the prediction:
 Interestingly enough, when I found out the probabilities, I thought maybe they were wrong (ie there was a value of 1.0).  Then I thought about it, and this is most likely due to floating point arithmetic.  Also, for the following reasons, I thought they were correct.  1)Based on LeNet architecture and 2)Validatin/Test accuracy were high 3) for the simpler images it guessed correctly 3) the ones that guessed incorrectly had a lot of noise and different colors in the background 4)it guessed correctly the simpler images with surprising accuracy
 
 For the first image, the model is relatively sure that this is a right-of-way sign (probability of 1.0), and the image does contain a right-of-way. The top five soft max probabilities were
-[11, 12, 26, 16, 21]
-[  1.00000000e+00,   2.64654807e-13,   9.86045453e-15,
-          9.27697250e-15,   9.27697250e-15]
+(11, 12, 26, 16, 21)
+(  1.00000000e+00,   2.64654807e-13,   9.86045453e-15,
+          9.27697250e-15,   9.27697250e-15)
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00     	| Right-of-way at the next intersection   		| 
@@ -182,9 +182,8 @@ For the first image, the model is relatively sure that this is a right-of-way si
 
 
 For the second image, the model is relatively sure that this is a Priority road sign (probability of 1.0), and the image does contain a Priority road sign. The top five soft max probabilities were
-[12, 13, 32, 41, 38]
-[  1.00000000e+00,   1.48634355e-10,   1.58109268e-12,
-          2.43505506e-14,   4.49019407e-15]
+(12, 13, 32, 41, 38)
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00        | Priority road  								| 
@@ -195,9 +194,8 @@ For the second image, the model is relatively sure that this is a Priority road 
 
 
 For the third image, the model is relatively sure that this is a Priority road sign (probability of 0.99), but the image does not contain a Priority road sign. It has a No Entry sign.  I suspect this is because of the background colors and noise.  The top five soft max probabilities were
- [12, 20, 35,  9, 25]
-[  9.98599470e-01,   1.39997201e-03,   5.39363953e-07,
-          9.73968710e-08,   7.93840282e-09]
+ (12, 20, 35,  9, 25)
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 9.98599470e-01        | Priority road   								| 
@@ -207,9 +205,8 @@ For the third image, the model is relatively sure that this is a Priority road s
 | 7.93840282e-09		| Road work      								|
 
 For the fourth image, the model is relatively sure that this is a Road work sign (probability of 1.00), and the image does contain a Road work sign. The top five soft max probabilities were
-[25, 14, 30, 24, 29]
-[  1.00000000e+00,   1.05209830e-12,   8.60858134e-15,
-          7.66597160e-18,   9.73080900e-19]
+(25, 14, 30, 24, 29)
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00        | Road work   									| 
@@ -219,9 +216,8 @@ For the fourth image, the model is relatively sure that this is a Road work sign
 | 9.73080900e-19	    | Bicycles crossing      						|
 
 For the fith image, the model is relatively sure that this is a General caution sign (probability of 0.74), and the image does not contain a General caution sign. It has a Speed limit 70 km/h.   I suspect this is because of the background colors and noise.  The top five soft max probabilities were
- [25,  5,  3, 31, 18]
-[  7.43826509e-01,   6.58523813e-02,   4.80511375e-02,
-          2.43359469e-02,   2.15997528e-02]
+ (25,  5,  3, 31, 18)
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 7.43826509e-01        | Road Work   									| 
