@@ -138,6 +138,7 @@ If a well known architecture was chosen:
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web
+
 [image4]: ./newTestImages/11.jpg "right-of-way"
 [image5]: ./newTestImages/12.jpg "priority road" 
 [image6]: ./newTestImages/17.jpg "no entry" 
@@ -170,8 +171,7 @@ Interestingly enough, when I found out the probabilities, I thought maybe they w
 
 For the first image, the model is relatively sure that this is a right-of-way sign (probability of 1.0), and the image does contain a right-of-way. The top five soft max probabilities were
 (11, 12, 26, 16, 21)
-(  1.00000000e+00,   2.64654807e-13,   9.86045453e-15,
-          9.27697250e-15,   9.27697250e-15)
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00     	| Right-of-way at the next intersection   		| 
