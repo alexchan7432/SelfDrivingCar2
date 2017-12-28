@@ -17,17 +17,6 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -36,7 +25,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/alexchan7432/SelfDrivingCar2/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -115,23 +104,25 @@ LeNet - that was the suggested architecture, and the problem seemed similar.  Nu
 It was underfitting and not accurate enough.
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
-Initially, I modified a bunch of parameters, so I could observe the changes in accuracy.  This ranged from everything mu,sigma, learning rate, batch size etc.  I tried increasing the Fully Connected layer node size, but it did not really help enough to get me to 93%.  Eventually, I was getting no where, so I looked to the forums for some guidance.  I added more epochs which resulted in the validation set increasing.  This made sense as the accuracy was not decreasing yet.  However, it did not do well on the test set.  Thus I added two drop out layers to reduce the overfitting, and after testing various parameters, I settled on a 0.9 keep rate.
+	Initially, I modified a bunch of parameters, so I could observe the changes in accuracy.  This ranged from everything mu,sigma, learning rate, batch size etc.  I tried increasing the Fully Connected layer node size, but it did not really help enough to get me to 93%.  Eventually, I was getting no where, so I looked to the forums for some guidance.  I added more epochs which resulted in the validation set increasing.  This made sense as the accuracy was not decreasing yet.  However, it did not do well on the test set.  Thus I added two drop out layers to reduce the overfitting, and after testing various parameters, I settled on a 0.9 keep rate.
 
 * Which parameters were tuned? How were they adjusted and why?
 
-I modified the drop out ratio and epochs.  Epochs were increased to increase accuracy.  However, when underfitting, I added two drop out layers.  I modified a bunch of different paramteres, but it didn't seem to help.
+	I modified the drop out ratio and epochs.  Epochs were increased to increase accuracy.  However, when underfitting, I added two drop out layers.  I modified a bunch of different paramteres, but it didn't seem to help.
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-Convultion layer work well because it uses the knowledge of the image structure.  Drop out layers seemed to help so that it helped the network learn different patterns for each class in addition to the convolution layers.
+	Convultion layer work well because it uses the knowledge of the image structure.  Drop out layers seemed to help so that it helped the network learn different patterns for each class in addition to the convolution layers.
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+
 	LeNet
 * Why did you believe it would be relevant to the traffic sign application?
+	
 	Similarly to classifying numbers, I figured it would work well with classifying traffic signs.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- Both the validation and test accuracy were high leading me to believe the model is working well.  
+	Both the validation and test accuracy were high leading me to believe the model is working well.  
 
 ### Test a Model on New Images
 
