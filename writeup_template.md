@@ -56,7 +56,7 @@ signs data set:
 Here is an exploratory visualization of the data set. It is a bar chart showing the number of examples in each class in each dataset (train,validation,test)
 
 
-[image1]: ./label-counts.png "Label Counts"
+[image1]: label-counts.png "Label Counts"
 This shows a visual representation of the label counts from each data set.  Here we can see that each set has the same proportion of labels and that the speed signs (sub 15 labels) make a majority of the labels.
 
 ### Design and Test a Model Architecture
@@ -139,11 +139,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web
 
-[image4]: ./newTestImages/11.jpg "right-of-way"
-[image5]: ./newTestImages/12.jpg "priority road" 
-[image6]: ./newTestImages/17.jpg "no entry" 
-[image7]: ./newTestImages/25.jpg "road work" 
-[image8]: ./newTestImages/4.jpg "70 km/h limit" 
+[image4]: newTestImages/11.jpg "right-of-way"
+[image5]: newTestImages/12.jpg "priority road" 
+[image6]: newTestImages/17.jpg "no entry" 
+[image7]: newTestImages/25.jpg "road work" 
+[image8]: newTestImages/4.jpg "70 km/h limit" 
 <!-- ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
  -->
