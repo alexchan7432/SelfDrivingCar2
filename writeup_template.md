@@ -171,7 +171,7 @@ Here are the results of the prediction:
 | Priority road  		| Priority road 								|
 | No Entry				| Priority road									|
 | Road Work	      		| Road Work					 					|
-| 70 km/h limit			| General Caution      							|
+| 70 km/h limit			| Road Work     								|
 
 
 
