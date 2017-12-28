@@ -55,7 +55,9 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the number of examples in each class in each dataset (train,validation,test)
 
-![alt text][image1]
+
+[image1]: ./label-counts.png "Label Counts"
+This shows a visual representation of the label counts from each data set.  Here we can see that each set has the same proportion of labels and that the speed signs (sub 15 labels) make a majority of the labels.
 
 ### Design and Test a Model Architecture
 
@@ -78,7 +80,7 @@ My final model consisted of the following layers:
 | Convolution 3x3	    | 1x1 stried, valid padding, outputs 10x10x16   |
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 					|
-| Flatten				|	output: 400									|
+| Flatten				| output: 400									|
 | Fully connected		| output 120        							|
 | RELU					|												|
 | Dropout 				| keep rate 0.9									|
@@ -86,7 +88,7 @@ My final model consisted of the following layers:
 | RELU					|												|
 | Dropout 				| keep rate 0.9									|
 | Fully connected		| output 43        								|
-| Softmax				| 43 classes        									|
+| Softmax				| 43 classes        							|
 |						|												|
 |						|												|
  
@@ -99,9 +101,9 @@ As with the LeNet implementation, I left the default adam optimizer, learning_ra
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.93
-* validation set accuracy of 0.93
-* test set accuracy of 0.94
+* training set accuracy of 0.998
+* validation set accuracy of 0.942
+* test set accuracy of 0.917
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -136,17 +138,18 @@ If a well known architecture was chosen:
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
-[image4]: ./newTestImages/11.jpg 
-[image5]: ./newTestImages/12.jpg 
-[image6]: ./newTestImages/17.jpg 
-[image7]: ./newTestImages/25.jpg 
-[image8]: ./newTestImages/4.jpg 
+[image4]: ./newTestImages/11.jpg "right-of-way"
+[image5]: ./newTestImages/12.jpg "priority road" 
+[image6]: ./newTestImages/17.jpg "no entry" 
+[image7]: ./newTestImages/25.jpg "road work" 
+[image8]: ./newTestImages/4.jpg "70 km/h limit" 
 <!-- ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
  -->
 The first image might be difficult to classify because ...
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+I downloaded images from the inernet, and then used some free website to resize it rather than python since there was only 5 images.  
 It guessed accruacy of 60% For the simpler images, it guessed correctly (right-of-way,priority road, road work).  For the two it guessed incorrectly, there was a lot of noise in the images.
 Here are the results of the prediction:
 
@@ -159,73 +162,73 @@ Here are the results of the prediction:
 | 70 km/h limit			| General Caution      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-Interestingly enough, when I found out the probabilities, I thought maybe they were wrong (ie 1.0).  Then I thought about it, and this is most likely due to floating point arithmetic.  Also, for the following reasons, I thought they were correct.  1)Based on LeNet architecture and 2)Validatin/Test accuracy were high 3) for the simpler images it guessed correctly 3) the ones that guessed incorrectly had a lot of noise and different colors in the background 4)it guessed correctly the simpler images with surprising accuracy
+Interestingly enough, when I found out the probabilities, I thought maybe they were wrong (ie there was a value of 1.0).  Then I thought about it, and this is most likely due to floating point arithmetic.  Also, for the following reasons, I thought they were correct.  1)Based on LeNet architecture and 2)Validatin/Test accuracy were high 3) for the simpler images it guessed correctly 3) the ones that guessed incorrectly had a lot of noise and different colors in the background 4)it guessed correctly the simpler images with surprising accuracy
 
 For the first image, the model is relatively sure that this is a right-of-way sign (probability of 1.0), and the image does contain a right-of-way. The top five soft max probabilities were
-[11, 27, 30, 32, 21]
-[  1.00000000e+00,   1.58074977e-11,   2.90482590e-12,
-          8.54308378e-16,   2.26778010e-16]
+[11, 12, 26, 16, 21]
+[  1.00000000e+00,   2.64654807e-13,   9.86045453e-15,
+          9.27697250e-15,   9.27697250e-15]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00     	| Right-of-way at the next intersection   		| 
-| 1.58074977e-11   		| Pedestrians 									|
-| 2.90482590e-12		| Beware of ice/snow							|
-| 8.54308378e-16	   	| End of all speed and passing limits			|
-| 2.26778010e-16	    | Double curve      							|
+| 2.64654807e-13   		| Priority Road  								|
+| 9.86045453e-15		| Traffic signals								|
+| 9.27697250e-15	   	| Vehicles over 3.5 metric tons prohibited		|
+| 9.27697250e-15	    | Double curve      							|
 
 
 For the second image, the model is relatively sure that this is a Priority road sign (probability of 1.0), and the image does contain a Priority road sign. The top five soft max probabilities were
-[12, 11, 10, 14, 42]
-[  1.00000000e+00,   1.57038577e-10,   1.33042730e-10,
-          1.33006453e-10,   1.11143983e-10]
+[12, 13, 32, 41, 38]
+[  1.00000000e+00,   1.48634355e-10,   1.58109268e-12,
+          2.43505506e-14,   4.49019407e-15]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.00000000e+00        | Priority road  								| 
-| 1.57038577e-10    	| Right-of-way at the next intersection			|
-| 1.33042730e-10		| No passing for vehicles over 3.5 metric tons	|
-| 1.33006453e-10	    | Stop					 						|
-| 1.11143983e-10		| End of no passing by vehicles over 3.5 metric tons|
+| 1.48634355e-10    	| Yield											|
+| 1.58109268e-12		| End of all speed and passing limits			|
+| 2.43505506e-14	    | End of no passing								|
+| 4.49019407e-15		| Keep right-of-way 							|
 
 
 For the third image, the model is relatively sure that this is a Priority road sign (probability of 0.99), but the image does not contain a Priority road sign. It has a No Entry sign.  I suspect this is because of the background colors and noise.  The top five soft max probabilities were
- [12,  9, 13, 25, 33]
-[  9.99994755e-01,   4.51896494e-06,   6.58094848e-07,
-          7.68379991e-08,   3.02995229e-09]
+ [12, 20, 35,  9, 25]
+[  9.98599470e-01,   1.39997201e-03,   5.39363953e-07,
+          9.73968710e-08,   7.93840282e-09]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 9.99994755e-01        | Priority road   								| 
-| 4.51896494e-06     	| No passing									|
-| 6.58094848e-07		| Yield											|
-| 7.68379991e-08	   	| Road work								 		|
-| 3.02995229e-09		| Turn right ahead      						|
+| 9.98599470e-01        | Priority road   								| 
+| 1.39997201e-03     	| General caution								|
+| 5.39363953e-07		| Ahead only									|
+| 9.73968710e-08	   	| No passing							 		|
+| 7.93840282e-09		| Road work      								|
 
-For the fourth image, the model is relatively sure that this is a Road work sign (probability of 0.99), and the image does contain a Road work sign. The top five soft max probabilities were
-[25, 26, 31, 10, 21]
-[  9.99143004e-01,   6.87892141e-04,   1.26974992e-04,
-          1.76829581e-05,   1.59555184e-05]
+For the fourth image, the model is relatively sure that this is a Road work sign (probability of 1.00), and the image does contain a Road work sign. The top five soft max probabilities were
+[25, 14, 30, 24, 29]
+[  1.00000000e+00,   1.05209830e-12,   8.60858134e-15,
+          7.66597160e-18,   9.73080900e-19]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 9.99143004e-01        | Road work   									| 
-| 6.87892141e-04     	| Traffic signals 								|
-| 1.26974992e-04		| Wild animals crossing							|
-| 1.76829581e-05	    | No passing for vehicles over 3.5 metric tons	|
-| 1.59555184e-05	    | Double curve      							|
+| 1.00000000e+00        | Road work   									| 
+| 1.05209830e-12    	| Stop 											|
+| 8.60858134e-15		| Beware of ice/snow							|
+| 7.66597160e-18	    | Road narrows on the right						|
+| 9.73080900e-19	    | Bicycles crossing      						|
 
-For the fith image, the model is relatively sure that this is a General caution sign (probability of 0.61), and the image does not contain a General caution sign. It has a Spee limit 70 km/h.   I suspect this is because of the background colors and noise.  The top five soft max probabilities were
- [18, 20,  3, 31,  5]
-[  6.12883031e-01,   7.60193393e-02,   5.78616038e-02,
-          5.47838584e-02,   5.09660766e-02]
+For the fith image, the model is relatively sure that this is a General caution sign (probability of 0.74), and the image does not contain a General caution sign. It has a Speed limit 70 km/h.   I suspect this is because of the background colors and noise.  The top five soft max probabilities were
+ [25,  5,  3, 31, 18]
+[  7.43826509e-01,   6.58523813e-02,   4.80511375e-02,
+          2.43359469e-02,   2.15997528e-02]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 6.12883031e-01        | General caution   							| 
-| 7.60193393e-02     	| Dangerous curve to the right 					|
-| 5.78616038e-02		| Speed limit (60km/h)							|
-| 5.47838584e-02	    | Wild animals crossing							|
-| 5.09660766e-02		| Speed limit (80km/h) 			    			|
+| 7.43826509e-01        | Road Work   									| 
+| 6.58523813e-02     	| Speed limit (80km/h) 							|
+| 4.80511375e-02		| Speed limit (30km/h)							|
+| 2.43359469e-02	    | Wild animals crossing							|
+| 2.15997528e-02		| General caution 			    				|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
